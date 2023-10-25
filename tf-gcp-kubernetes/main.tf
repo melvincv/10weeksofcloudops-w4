@@ -1,6 +1,6 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
-  project = "weeks-of-cloudops-w4"
+  project = var.project_name
   region  = var.region
 }
 
