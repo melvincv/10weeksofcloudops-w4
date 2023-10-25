@@ -22,17 +22,17 @@ resource "google_compute_network" "main" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork
 resource "google_compute_subnetwork" "private1" {
   name                     = "private1"
-  ip_cidr_range            = "10.0.0.0/18"
-  region                   = "europe-west9"
+  ip_cidr_range            = var.main_cidr
+  region                   = var.region
   network                  = google_compute_network.main.id
   private_ip_google_access = true
 
   secondary_ip_range {
     range_name    = "k8s-pod-range"
-    ip_cidr_range = "10.48.0.0/14"
+    ip_cidr_range = var.main_cidr_sec1
   }
   secondary_ip_range {
     range_name    = "k8s-service-range"
-    ip_cidr_range = "10.52.0.0/20"
+    ip_cidr_range = var.main_cidr_sec2
   }
 }

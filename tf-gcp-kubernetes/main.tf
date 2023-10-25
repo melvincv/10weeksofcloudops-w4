@@ -1,7 +1,7 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
   project = "weeks-of-cloudops-w4"
-  region  = "europe-west9"
+  region  = var.region
 }
 
 # https://www.terraform.io/language/settings/backends/gcs
