@@ -26,3 +26,18 @@ variable "main_cidr_sec1" {
 variable "main_cidr_sec2" {
   type = string
 }
+
+variable "gen_machine_type" {
+  type = string
+  default = "e2-small"
+}
+
+variable "spot_machine_type" {
+  type = string
+  default = "e2-small"
+}
+
+variable "node_disk_size_gb" {
+  type = number
+  default = 20
+}
