@@ -4,7 +4,7 @@ metadata:
   name: ing-ytclone
 spec:
   rules:
-    - host: ytclone.mcv.in
+    - host: ytclone.cka.melvincv.com
       http:
         paths:
           - path: /
