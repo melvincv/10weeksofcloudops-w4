@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing-ytclone
+spec:
+  rules:
+    - host: ytclone.mcv.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ytclone-service
+                port:
+                  number: 80
+  ingressClassName: nginx
