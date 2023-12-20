@@ -1,0 +1,10 @@
+region = ""
+main_cidr = ""
+main_cidr_sec1 = ""
+main_cidr_sec2 = ""
+zone1 = ""
+zone2 = ""
+project_name = ""
+gen_machine_type = ""
+spot_machine_type = ""
+node_disk_size_gb = 
