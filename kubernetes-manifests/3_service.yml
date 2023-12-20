@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ytclone-service
+  namespace: yt-clone
+  labels:
+    app: ytclone
 spec:
   selector:
     app: ytclone

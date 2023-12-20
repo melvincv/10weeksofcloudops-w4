@@ -2,9 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ing-ytclone
+  namespace: yt-clone
 spec:
   rules:
-    - host: ytclone.cka.melvincv.com
+    - host: ytclone.gcp.melvincv.com
       http:
         paths:
           - path: /

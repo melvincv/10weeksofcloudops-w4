@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ytclone-d
+  namespace: yt-clone
   labels:
     app: ytclone
 spec:
