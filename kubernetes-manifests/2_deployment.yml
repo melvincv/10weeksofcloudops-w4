@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ytclone
-          image: melvincv/ytclone
+          image: melvincv/ytclone:latest
           ports:
             - containerPort: 80
           resources: # Because if limits = requests then QoS is set to "Guaranteed"

@@ -28,3 +28,9 @@ jobs:
           context: app/youtube-clone
           push: true
           tags: melvincv/ytclone:${{ github.ref_name }}-${{ github.run_number }}
+
+      - name: replace image in deployment manifest
+        run: |
+          export IMAGETAG="melvincv/ytclone:${{ github.ref_name }}-${{ github.run_number }}"
+          sed "s/image:.*/image: ${IMAGETAG}/g" kubernetes-manifests/2_deployment.yml
+
