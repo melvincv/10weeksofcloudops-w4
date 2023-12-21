@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ytclone:
+    build: .
+    image: ytclone
+    restart: unless-stopped
+    ports:
+      - 80:80
+    
