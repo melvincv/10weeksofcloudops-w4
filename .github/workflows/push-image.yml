@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -26,6 +23,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: app/youtube-clone
-          file: app/youtube-clone/Dockerfile
           push: true
           tags: melvincv/ytclone:${{ github.ref_name }}-${{ github.run_number }}
