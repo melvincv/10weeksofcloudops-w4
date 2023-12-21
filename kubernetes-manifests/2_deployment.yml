@@ -25,8 +25,8 @@ spec:
               memory: "512Mi" # If container uses over 500MB it is killed (OOM)
               #cpu: "2"          # Not normally needed, unless you need to protect other workloads or QoS must be "Guaranteed"
             requests:
-              memory: "100Mi" # Scheduler finds a node where 500MB is available
-              cpu: "100m" # Scheduler finds a node where 1 vCPU is available
+              memory: "256Mi" # Scheduler finds a node where 500MB is available
+              cpu: "500m" # Scheduler finds a node where 0.5 vCPU is available
           # per-container security context
           # lock down privileges inside the container
           securityContext:
