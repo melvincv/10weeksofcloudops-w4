@@ -11,7 +11,7 @@ resource "google_container_node_pool" "general" {
 
   autoscaling {
     min_node_count = 0
-    max_node_count = 2
+    max_node_count = 0
   }
 
   management {
@@ -47,7 +47,7 @@ resource "google_container_node_pool" "spot" {
 
   autoscaling {
     min_node_count = 0
-    max_node_count = 5
+    max_node_count = 3
   }
 
   node_config {
