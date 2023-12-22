@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ytclone
-          image: melvincv/ytclone:latest
+          image: melvincv/ytclone:main-9
           ports:
             - containerPort: 80
           envFrom:
