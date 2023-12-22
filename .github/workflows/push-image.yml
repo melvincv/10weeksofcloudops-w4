@@ -8,7 +8,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    env:
+      REACT_APP_RAPID_API_KEY: ${{ secrets.REACT_APP_RAPID_API_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
