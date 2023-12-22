@@ -20,6 +20,9 @@ spec:
           image: melvincv/ytclone:latest
           ports:
             - containerPort: 80
+          envFrom:
+            - secretRef:
+                name: rapid-api-key
           resources: # Because if limits = requests then QoS is set to "Guaranteed"
             limits:
               memory: "512Mi" # If container uses over 500MB it is killed (OOM)

@@ -34,6 +34,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# .env files
+# Secrets
 **/.env
 .env
+kubernetes-manifests/secrets.yml
