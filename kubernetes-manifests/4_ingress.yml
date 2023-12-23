@@ -5,7 +5,7 @@ metadata:
   namespace: yt-clone
 spec:
   rules:
-    - host: ytclone.gcp.melvincv.com
+    - host: ytclone.cka.melvincv.com
       http:
         paths:
           - path: /
