@@ -33,7 +33,7 @@ spec:
               #cpu: "2"          # Not normally needed, unless you need to protect other workloads or QoS must be "Guaranteed"
             requests:
               memory: "256Mi" # Scheduler finds a node where 500MB is available
-              cpu: "500m" # Scheduler finds a node where 0.5 vCPU is available
+              cpu: "200m" # Scheduler finds a node where 0.5 vCPU is available
           volumeMounts:
             - name: rapid-api-volume
               readOnly: true
