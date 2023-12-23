@@ -21,7 +21,7 @@ spec:
           secretName: rapid-api-key
       containers:
         - name: ytclone
-          image: melvincv/ytclone:main-13
+          image: melvincv/ytclone:main-14
           ports:
             - containerPort: 80
           envFrom:
