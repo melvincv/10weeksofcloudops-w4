@@ -15,10 +15,6 @@ spec:
       labels:
         app: ytclone
     spec:
-      volumes:
-      - name: rapid-api-volume
-        secret:
-          secretName: rapid-api-key
       containers:
         - name: ytclone
           image: melvincv/ytclone:main-14
@@ -34,10 +30,6 @@ spec:
             requests:
               memory: "256Mi" # Scheduler finds a node where 500MB is available
               cpu: "200m" # Scheduler finds a node where 0.5 vCPU is available
-          volumeMounts:
-            - name: rapid-api-volume
-              readOnly: true
-              mountPath: "/usr/share/nginx/html"
           # per-container security context
           # lock down privileges inside the container
           securityContext:
