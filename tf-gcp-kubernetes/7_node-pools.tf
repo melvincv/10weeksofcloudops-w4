@@ -47,12 +47,14 @@ resource "google_container_node_pool" "spot" {
 
   autoscaling {
     min_node_count = 0
-    max_node_count = 3
+    max_node_count = 1
   }
 
   node_config {
     preemptible  = true
     machine_type = var.spot_machine_type
+    disk_size_gb = var.node_disk_size_gb
+    disk_type = "pd-balanced"
 
     labels = {
       role = "spot-instances"
