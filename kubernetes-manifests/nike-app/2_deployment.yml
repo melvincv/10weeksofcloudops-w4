@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: nike-app
-          image: melvincv/nike-app:main
+          image: melvincv/ytclone:main-1
           ports:
             - containerPort: 80
           resources: # Because if limits = requests then QoS is set to "Guaranteed"
