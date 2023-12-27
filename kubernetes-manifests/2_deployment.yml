@@ -24,8 +24,8 @@ spec:
             - name: REACT_APP_RAPID_API_KEY
               valueFrom:
                 secretKeyRef:
-                  - name: rapid-api-key
-                    key: REACT_APP_RAPID_API_KEY
+                  name: rapid-api-key
+                  key: REACT_APP_RAPID_API_KEY
           resources: # Because if limits = requests then QoS is set to "Guaranteed"
             limits:
               memory: "512Mi" # If container uses over 500MB it is killed (OOM)

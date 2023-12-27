@@ -38,3 +38,4 @@ terraform.rc
 **/.env
 .env
 kubernetes-manifests/secrets.yml
+vault
