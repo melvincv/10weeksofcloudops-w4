@@ -39,7 +39,7 @@ jobs:
 
       - name: Replace image in deployment manifest
         run: |
-          export IMAGETAG="melvincv/ytclone:${{ github.ref_name }}-${{ github.run_number }}"
+          export IMAGETAG="melvincv/nike-app:${{ github.ref_name }}-${{ github.run_number }}"
           sed -i "s|image:.*|image: ${IMAGETAG}|" kubernetes-manifests/nike-app/2_deployment.yml
 
       - name: Replace Host in Ingress
