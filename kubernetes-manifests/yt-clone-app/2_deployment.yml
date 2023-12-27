@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ytclone-d
+  namespace: yt-clone
+  labels:
+    app: ytclone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ytclone
+  template:
+    metadata:
+      labels:
+        app: ytclone
+    spec:
+      containers:
+        - name: ytclone
+          image: melvincv/ytclone:main-17
+          ports:
+            - containerPort: 80
+          env:
+            - name: REACT_APP_RAPID_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: rapid-api-key
+                  key: REACT_APP_RAPID_API_KEY
+          resources: # Because if limits = requests then QoS is set to "Guaranteed"
+            limits:
+              memory: "512Mi" # If container uses over 500MB it is killed (OOM)
+              #cpu: "2"          # Not normally needed, unless you need to protect other workloads or QoS must be "Guaranteed"
+            requests:
+              memory: "256Mi" # Scheduler finds a node where 500MB is available
+              cpu: "200m" # Scheduler finds a node where 0.5 vCPU is available
+          # per-container security context
+          # lock down privileges inside the container
+          securityContext:
+            allowPrivilegeEscalation: false # prevent sudo, etc.
+            privileged: false # prevent acting like host root
+      terminationGracePeriodSeconds: 60 # default is 30, but you may need more time to gracefully shutdown (HTTP long polling, user uploads, etc)
